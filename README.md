@@ -1,7 +1,7 @@
 # usb_hid_controller
-read raw data from usb controller 
-Aim is to automatic select the os 
-Actually it is setup for windows
+- read raw data from usb controller
+- Aim is to automatic select the os 
+- Actually it is setup for windows
 
 # OS Windows 
 it is nessesary to install libusb and to define the environment Variables
