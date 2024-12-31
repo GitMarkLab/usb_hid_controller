@@ -3,9 +3,9 @@
 - all data available in a large array so any controller can be connected. The mapping can be done on your own
 - Automatic detection of win or linux system
 
-run get_controller to find out the vid and pid
-add this to the init and run again
-in the notebook is an example on how to find elements in the array on value change
+run get_controller to find out the vid and pid.
+add this to the init and run again.
+in the notebook is an example on how to find elements in the array on value change.
 
 
 # OS Windows 
