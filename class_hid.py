@@ -180,9 +180,10 @@ class LinuxController:
             'devices':None,
             'lpad_h':None,
             'data_available':None,
-            'raw_data': [0] * 1100,  # pre initialize to store joystick callback data independent from controller type     
+            'raw_data': [-1] * 1100,  # pre initialize to store joystick callback data independent from controller type     
             'flag':None,        
-            'path': None #Pfad: {device.path}
+            'path': None, #Pfad: {device.path}
+            'stop_process':False
         }   
         # Mapping der Buttons und Achsen (XBOX 360 controller)
         # this is not used as values will be stored in an generic array
@@ -240,7 +241,6 @@ class LinuxController:
                 self.thread = threading.Thread(target=self._run)
                 self.thread.start() 
                 return "connected"#self.controller_info["devices"]      
-
         return "not connected"#self.controller_info["devices"] 
         
     def read(self):
@@ -286,10 +286,14 @@ class LinuxController:
             return False    
     
     def close(self):
-        print("TODO close")
+        #print("TODO close")
         #self.thread.join()  # Wartet, bis der Thread beendet ist
+        self.controller_info['hid_device'].close()
         self.stop_event.set()
-        self.thread.join()
+        #self.thread.join()
+
+        
+
         
     def extract_vid_pid(self,hid_list,_vid,_pid):
         print("TODO")
