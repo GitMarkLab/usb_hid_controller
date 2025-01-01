@@ -254,18 +254,12 @@ class LinuxController:
                         self.controller_info['raw_data'][event.code] = 0
             elif event.type == ecodes.EV_ABS:
                     self.controller_info['raw_data'][event.code] = event.value
-                    #print(f"{self.axis_map[event.code]}: {event.value}")
-    
-    def myfunction(self, tag):
-        print(tag)
-        
+                    #print(f"{self.axis_map[event.code]}: {event.value}")    
+       
     def _run(self):
         while not self.stop_event.is_set():
             self.read()
             #print("Stop event status:  ",self.stop_event.is_set())
-            #print("Thread läuft...")
-            #self.myfunction("hello")
-            #time.sleep(1)  # Simuliert eine Aufgabe
     
     def _read_data(self):
         print("TODO _read_data")
@@ -286,11 +280,9 @@ class LinuxController:
             return False    
     
     def close(self):
-        #print("TODO close")
-        #self.thread.join()  # Wartet, bis der Thread beendet ist
         self.controller_info['hid_device'].close()
         self.stop_event.set()
-        #self.thread.join()
+
 
         
 

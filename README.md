@@ -25,7 +25,8 @@ tested with USB game controller and 3Dconnexion SpaceNavigator in an virtual win
 
 
 # Linux 
-it is tested with an XBOX 360 controller clone and SNES clone
+it is tested with an XBOX 360 controller clone and SNES clone.
+Also PXN 0082 Arcade Stick PC Street Fighter USB Arcade  works
 
 # Android
 ### TODO
